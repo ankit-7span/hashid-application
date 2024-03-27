@@ -1,0 +1,18 @@
+server:
+  port: 8180
+  servlet:
+    contextPath: /hashid
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: student
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testiqo
+    username: postgres
+    password: root
