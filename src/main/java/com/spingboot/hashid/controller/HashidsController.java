@@ -3,6 +3,7 @@ package com.spingboot.hashid.controller;
 import com.spingboot.hashid.entity.Student;
 import com.spingboot.hashid.repository.StudentRepository;
 import com.spingboot.hashid.request.StudentRequest;
+import com.spingboot.hashid.request.StudentResponse;
 import com.spingboot.hashid.service.HashidsService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,8 +37,9 @@ public class HashidsController {
         return hashidsService.decode(hash);
     }
 
-    @PostMapping("/encode")
-    public Student encode(@RequestBody StudentRequest studentRequest) {
-        return studentRepository.save(new Student(studentRequest.id(),"name"));
-    }
+/*    @PostMapping("/encode")
+    public StudentResponse encode(@RequestBody StudentRequest studentRequest) {
+        //Student save = studentRepository.save(new Student(studentRequest.id(), "name"));
+        return new StudentResponse(save.getId(),save.getName());
+    }*/
 }
